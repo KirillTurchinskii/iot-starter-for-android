@@ -33,7 +33,6 @@ import com.ibm.iot.android.iotstarter.IoTStarterApplication;
 import com.ibm.iot.android.iotstarter.R;
 import com.ibm.iot.android.iotstarter.activities.MainPagerActivity;
 import com.ibm.iot.android.iotstarter.activities.ProfilesActivity;
-import com.ibm.iot.android.iotstarter.activities.TutorialPagerActivity;
 import com.ibm.iot.android.iotstarter.activities.WebActivity;
 
 /**
@@ -90,11 +89,6 @@ public class IoTStarterPagerFragment extends Fragment {
         }
     }
 
-    void openTutorial() {
-        Log.d(TAG, ".openTutorial() entered");
-        Intent tutorialIntent = new Intent(getActivity().getApplicationContext(), TutorialPagerActivity.class);
-        startActivity(tutorialIntent);
-    }
 
     private void openWeb() {
         Log.d(TAG, ".openWeb() entered");
@@ -133,9 +127,6 @@ public class IoTStarterPagerFragment extends Fragment {
                 return true;
             case R.id.action_profiles:
                 openProfiles();
-                return true;
-            case R.id.action_tutorial:
-                openTutorial();
                 return true;
             case R.id.action_web:
                 openWeb();

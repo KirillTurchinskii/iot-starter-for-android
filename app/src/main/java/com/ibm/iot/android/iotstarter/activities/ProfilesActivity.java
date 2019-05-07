@@ -230,11 +230,6 @@ public class ProfilesActivity extends Activity {
         return true;
     }
 
-    void openTutorial() {
-        Log.d(TAG, ".openTutorial() entered");
-        Intent tutorialIntent = new Intent(getApplicationContext(), TutorialPagerActivity.class);
-        startActivity(tutorialIntent);
-    }
 
     void openWeb() {
         Log.d(TAG, ".openWeb() entered");
@@ -273,9 +268,6 @@ public class ProfilesActivity extends Activity {
                 return true;
             case R.id.action_home:
                 openHome();
-                return true;
-            case R.id.action_tutorial:
-                openTutorial();
                 return true;
             case R.id.action_web:
                 openWeb();

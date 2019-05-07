@@ -97,11 +97,7 @@ public class WebActivity extends Activity {
         }
     }
 
-    void openTutorial() {
-        Log.d(TAG, ".openTutorial() entered");
-        Intent tutorialIntent = new Intent(getApplicationContext(), TutorialPagerActivity.class);
-        startActivity(tutorialIntent);
-    }
+
 
     private void openHome() {
         Log.d(TAG, ".openHome() entered");
@@ -136,9 +132,6 @@ public class WebActivity extends Activity {
                 return true;
             case R.id.action_profiles:
                 openProfiles();
-                return true;
-            case R.id.action_tutorial:
-                openTutorial();
                 return true;
             case R.id.action_home:
                 openHome();

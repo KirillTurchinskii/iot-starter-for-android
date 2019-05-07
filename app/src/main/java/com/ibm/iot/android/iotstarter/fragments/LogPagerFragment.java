@@ -28,7 +28,6 @@ import android.widget.ListView;
 import com.ibm.iot.android.iotstarter.IoTStarterApplication;
 import com.ibm.iot.android.iotstarter.R;
 import com.ibm.iot.android.iotstarter.activities.ProfilesActivity;
-import com.ibm.iot.android.iotstarter.activities.TutorialPagerActivity;
 import com.ibm.iot.android.iotstarter.activities.WebActivity;
 import com.ibm.iot.android.iotstarter.utils.Constants;
 
@@ -167,11 +166,6 @@ public class LogPagerFragment extends ListFragment {
         }
     }
 
-    void openTutorial() {
-        Log.d(TAG, ".openTutorial() entered");
-        Intent tutorialIntent = new Intent(getActivity().getApplicationContext(), TutorialPagerActivity.class);
-        startActivity(tutorialIntent);
-    }
 
     private void openWeb() {
         Log.d(TAG, ".openWeb() entered");
@@ -201,9 +195,6 @@ public class LogPagerFragment extends ListFragment {
                 if (!ProfilesActivity.class.getName().equals(app.getCurrentRunningActivity())) {
                     openProfiles();
                 }
-                return true;
-            case R.id.action_tutorial:
-                openTutorial();
                 return true;
             case R.id.action_web:
                 openWeb();

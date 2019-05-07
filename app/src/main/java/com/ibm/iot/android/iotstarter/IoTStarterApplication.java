@@ -50,7 +50,6 @@ import java.io.IOException;
 public class IoTStarterApplication extends Application {
     private final static String TAG = IoTStarterApplication.class.getName();
 
-    private boolean tutorialShown = false;
 
     // Current activity of the application, updated whenever activity is changed
     private String currentRunningActivity;
@@ -118,9 +117,6 @@ public class IoTStarterApplication extends Application {
         //editor.putStringSet("testiot", props);
         //editor.commit();
 
-        if (settings.getString("TUTORIAL_SHOWN", null) != null) {
-            tutorialShown = true;
-        }
 
         myIoTCallbacks = MyIoTCallbacks.getInstance(this);
 
@@ -186,7 +182,7 @@ public class IoTStarterApplication extends Application {
             Map<String, ?> profileList = settings.getAll();
             if (profileList != null) {
                 for (String key : profileList.keySet()) {
-                    if (key.equals("iot:selectedprofile") || key.equals("TUTORIAL_SHOWN")) {
+                    if (key.equals("iot:selectedprofile")) {
                         continue;
                     }
                     Set<String> profile;
@@ -525,14 +521,4 @@ public class IoTStarterApplication extends Application {
         this.useSSL = useSSL;
     }
 
-    public boolean isTutorialShown() {
-        return tutorialShown;
-    }
-
-    public void setTutorialShown(boolean tutorialShown) {
-        this.tutorialShown = tutorialShown;
-        SharedPreferences.Editor editor = settings.edit();
-        editor.putString("TUTORIAL_SHOWN", "yes");
-        editor.commit();
-    }
 }

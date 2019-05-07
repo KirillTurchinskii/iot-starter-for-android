@@ -20,10 +20,6 @@
           android:title="@string/home_label"
           android:orderInCategory="0"
           android:showAsAction="never"/>
-    <item android:id="@+id/action_tutorial"
-          android:title="@string/tutorial_label"
-          android:orderInCategory="1"
-          android:showAsAction="never"/>
     <item android:id="@+id/action_profiles"
           android:title="@string/profiles_label"
           android:orderInCategory="2"

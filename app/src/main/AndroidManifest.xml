@@ -39,11 +39,6 @@
             android:theme="@style/IoTStarterTheme">
 
         <activity
-                android:name=".activities.TutorialPagerActivity"
-                android:launchMode="standard">
-        </activity>
-
-        <activity
                 android:name=".activities.MainPagerActivity"
                 android:launchMode="singleTask"
                 android:screenOrientation="portrait">

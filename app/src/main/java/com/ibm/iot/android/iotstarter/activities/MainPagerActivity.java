@@ -64,11 +64,6 @@ public class MainPagerActivity extends FragmentActivity {
         super.onResume();
 
         IoTStarterApplication app = (IoTStarterApplication) getApplication();
-        if (!app.isTutorialShown()) {
-            Intent tutorialIntent = new Intent(getApplicationContext(), TutorialPagerActivity.class);
-            startActivity(tutorialIntent);
-            app.setTutorialShown(true);
-        }
     }
 
     /**
