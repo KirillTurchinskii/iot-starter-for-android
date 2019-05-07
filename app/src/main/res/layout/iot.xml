@@ -93,6 +93,22 @@
                 android:text="@string/accel_z"
                 android:id="@+id/accelZ"
                 />
+        <TextView
+            style="@style/MyActionBarTitleText"
+            android:gravity="center"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="Light data"
+            android:id="@+id/lightInfo"
+            />
+        <TextView
+            style="@style/MyActionBarTitleText"
+            android:gravity="center"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="light: 0.0 lumen"
+            android:id="@+id/light"
+            />
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"

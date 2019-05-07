@@ -24,6 +24,7 @@ import android.util.Log;
 import android.view.*;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+
 import com.ibm.iot.android.iotstarter.IoTStarterApplication;
 import com.ibm.iot.android.iotstarter.R;
 import com.ibm.iot.android.iotstarter.activities.ProfilesActivity;

@@ -26,6 +26,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.webkit.WebChromeClient;
 import android.webkit.WebView;
+
 import com.ibm.iot.android.iotstarter.IoTStarterApplication;
 import com.ibm.iot.android.iotstarter.R;
 import com.ibm.iot.android.iotstarter.utils.Constants;

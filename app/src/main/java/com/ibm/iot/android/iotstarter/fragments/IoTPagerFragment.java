@@ -27,6 +27,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+
 import com.ibm.iot.android.iotstarter.IoTStarterApplication;
 import com.ibm.iot.android.iotstarter.R;
 import com.ibm.iot.android.iotstarter.iot.IoTClient;
@@ -34,6 +35,7 @@ import com.ibm.iot.android.iotstarter.utils.Constants;
 import com.ibm.iot.android.iotstarter.utils.MessageFactory;
 import com.ibm.iot.android.iotstarter.utils.MyIoTActionListener;
 import com.ibm.iot.android.iotstarter.views.DrawingView;
+
 import org.eclipse.paho.client.mqttv3.MqttException;
 
 /**
@@ -226,7 +228,7 @@ public class IoTPagerFragment extends IoTStarterPagerFragment {
         } else if (data.equals(Constants.INTENT_DATA_RECEIVED)) {
             processReceiveIntent();
         } else if (data.equals(Constants.ACCEL_EVENT)) {
-            processAccelEvent();
+            processSensorEvent();
         } else if (data.equals(Constants.COLOR_EVENT)) {
             Log.d(TAG, "Updating background color");
             DrawingView drawingView = (DrawingView) getActivity().findViewById(R.id.drawing);
@@ -268,11 +270,14 @@ public class IoTPagerFragment extends IoTStarterPagerFragment {
     /**
      * Update acceleration view strings
      */
-    private void processAccelEvent() {
-        Log.v(TAG, ".processAccelEvent()");
+    private void processSensorEvent() {
+        Log.v(TAG, ".processSensorEvent()");
         float[] accelData = app.getAccelData();
         ((TextView) getActivity().findViewById(R.id.accelX)).setText("x: " + accelData[0]);
         ((TextView) getActivity().findViewById(R.id.accelY)).setText("y: " + accelData[1]);
         ((TextView) getActivity().findViewById(R.id.accelZ)).setText("z: " + accelData[2]);
+
+        float lightData = app.getLightData();
+        ((TextView) getActivity().findViewById(R.id.light)).setText("light: " + lightData + " lumen");
     }
 }

@@ -20,11 +20,13 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
 import android.util.Log;
+
 import com.ibm.iot.android.iotstarter.IoTStarterApplication;
 import com.ibm.iot.android.iotstarter.activities.ProfilesActivity;
 import com.ibm.iot.android.iotstarter.fragments.IoTPagerFragment;
 import com.ibm.iot.android.iotstarter.fragments.LogPagerFragment;
 import com.ibm.iot.android.iotstarter.fragments.LoginPagerFragment;
+
 import org.json.JSONException;
 import org.json.JSONObject;
 

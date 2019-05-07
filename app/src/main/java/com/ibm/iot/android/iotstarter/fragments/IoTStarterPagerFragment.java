@@ -28,11 +28,12 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.widget.EditText;
+
 import com.ibm.iot.android.iotstarter.IoTStarterApplication;
 import com.ibm.iot.android.iotstarter.R;
 import com.ibm.iot.android.iotstarter.activities.MainPagerActivity;
-import com.ibm.iot.android.iotstarter.activities.TutorialPagerActivity;
 import com.ibm.iot.android.iotstarter.activities.ProfilesActivity;
+import com.ibm.iot.android.iotstarter.activities.TutorialPagerActivity;
 import com.ibm.iot.android.iotstarter.activities.WebActivity;
 
 /**

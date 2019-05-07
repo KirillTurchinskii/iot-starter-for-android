@@ -23,8 +23,10 @@ import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.util.Log;
+
 import com.ibm.iot.android.iotstarter.IoTStarterApplication;
 import com.ibm.iot.android.iotstarter.iot.IoTClient;
+
 import org.eclipse.paho.client.mqttv3.MqttException;
 
 import java.util.Timer;
@@ -42,6 +44,7 @@ public class DeviceSensor implements SensorEventListener {
     private final SensorManager sensorManager;
     private final Sensor accelerometer;
     private final Sensor magnetometer;
+    private final Sensor lightSensor;
     private final Context context;
     private Timer timer;
     private long tripId;
@@ -52,6 +55,7 @@ public class DeviceSensor implements SensorEventListener {
         sensorManager = (SensorManager) context.getSystemService(Context.SENSOR_SERVICE);
         accelerometer = sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
         magnetometer = sensorManager.getDefaultSensor(Sensor.TYPE_MAGNETIC_FIELD);
+        lightSensor = sensorManager.getDefaultSensor(Sensor.TYPE_LIGHT);
         app = (IoTStarterApplication) context.getApplicationContext();
     }
 
@@ -75,6 +79,7 @@ public class DeviceSensor implements SensorEventListener {
         if (!isEnabled) {
             sensorManager.registerListener(this, accelerometer, SensorManager.SENSOR_DELAY_NORMAL);
             sensorManager.registerListener(this, magnetometer, SensorManager.SENSOR_DELAY_NORMAL);
+            sensorManager.registerListener(this, lightSensor, SensorManager.SENSOR_DELAY_NORMAL);
             tripId = System.currentTimeMillis()/1000;
             timer = new Timer();
             timer.scheduleAtFixedRate(new SendTimerTask(), 1000, 1000);
@@ -101,6 +106,7 @@ public class DeviceSensor implements SensorEventListener {
     private final float[] I = new float[9]; // inclination matrix
     private float[] O = new float[3]; // orientation azimuth, pitch, roll
     private float yaw;
+    private float L; //light
 
     /**
      * Callback for processing data from the registered sensors. Accelerometer and magnetometer
@@ -120,6 +126,9 @@ public class DeviceSensor implements SensorEventListener {
             Log.v(TAG, "Magnetometer -- x: " + sensorEvent.values[0] + " y: "
                     + sensorEvent.values[1] + " z: " + sensorEvent.values[2]);
             M = sensorEvent.values;
+        }else if(sensorEvent.sensor.getType() == Sensor.TYPE_LIGHT){
+            Log.v(TAG, "Light is " + sensorEvent.values[0] + " lumen");
+            L = sensorEvent.values[0];
         }
         if (G != null && M != null) {
             if (SensorManager.getRotationMatrix(R, I, G, M)) {
@@ -164,7 +173,8 @@ public class DeviceSensor implements SensorEventListener {
                 heading = app.getCurrentLocation().getBearing();
                 speed = app.getCurrentLocation().getSpeed() * 3.6f;
             }
-            String messageData = MessageFactory.getAccelMessage(G, O, yaw, lon, lat, heading, speed, tripId);
+
+            String messageData = MessageFactory.getAccelMessage(G, O, yaw, lon, lat, heading, speed, tripId, L);
 
             try {
                 // create ActionListener to handle message published results
@@ -190,6 +200,7 @@ public class DeviceSensor implements SensorEventListener {
             }
 
             app.setAccelData(G);
+            app.setLightData(L);
 
             //String runningActivity = app.getCurrentRunningActivity();
             //if (runningActivity != null && runningActivity.equals(IoTPagerFragment.class.getName())) {

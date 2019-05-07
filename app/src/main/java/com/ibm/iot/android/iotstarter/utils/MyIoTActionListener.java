@@ -18,9 +18,11 @@ package com.ibm.iot.android.iotstarter.utils;
 import android.content.Context;
 import android.content.Intent;
 import android.util.Log;
+
 import com.ibm.iot.android.iotstarter.IoTStarterApplication;
 import com.ibm.iot.android.iotstarter.iot.IoTActionListener;
 import com.ibm.iot.android.iotstarter.iot.IoTClient;
+
 import org.eclipse.paho.client.mqttv3.IMqttToken;
 import org.eclipse.paho.client.mqttv3.MqttException;
 

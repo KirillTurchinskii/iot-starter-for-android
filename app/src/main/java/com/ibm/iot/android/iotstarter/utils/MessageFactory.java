@@ -19,7 +19,6 @@ package com.ibm.iot.android.iotstarter.utils;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.TimeZone;
 
 /**
  * Build messages to be published by the application.
@@ -39,7 +38,7 @@ public class MessageFactory {
      * @param tripId Long containing trip identifier
      * @return String containing JSON formatted message
      */
-    public static String getAccelMessage(float G[], float O[], float yaw, double lon, double lat, float heading, float speed, long tripId) {
+    public static String getAccelMessage(float G[], float O[], float yaw, double lon, double lat, float heading, float speed, long tripId, float light) {
         // Android does not support the X pattern, so use Z and insert ':' if required.
         DateFormat isoDateTimeFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSZ");
 //        isoDateTimeFormat.setTimeZone(TimeZone.getTimeZone("UTC"));
@@ -60,7 +59,8 @@ public class MessageFactory {
                 "\"heading\":" + heading + ", " +
                 "\"speed\":" + speed + ", " +
                 "\"trip_id\": \"" + tripId + "\", " +
-                "\"timestamp\":\"" + isoTimestamp + "\" " +
+                "\"timestamp\":\"" + isoTimestamp + "\", " +
+                "\"light\":" + light +
                 "} }";
     }
 

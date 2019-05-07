@@ -28,8 +28,8 @@ import android.widget.*;
 
 import com.ibm.iot.android.iotstarter.IoTStarterApplication;
 import com.ibm.iot.android.iotstarter.R;
-import com.ibm.iot.android.iotstarter.utils.Constants;
 import com.ibm.iot.android.iotstarter.iot.IoTDevice;
+import com.ibm.iot.android.iotstarter.utils.Constants;
 
 import java.util.ArrayList;
 

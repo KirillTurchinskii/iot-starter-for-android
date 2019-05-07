@@ -30,6 +30,10 @@ import android.hardware.camera2.CameraManager;
 import android.location.Location;
 import android.os.Build;
 import android.util.Log;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Set;
+import java.util.Map;
 
 import com.ibm.iot.android.iotstarter.iot.IoTDevice;
 import com.ibm.iot.android.iotstarter.utils.Constants;
@@ -38,7 +42,6 @@ import com.ibm.iot.android.iotstarter.utils.LocationUtils;
 import com.ibm.iot.android.iotstarter.utils.MyIoTCallbacks;
 
 import java.io.IOException;
-import java.util.*;
 
 /**
  * Main class for the IoT Starter application. Stores values for
@@ -74,6 +77,7 @@ public class IoTStarterApplication extends Application {
     private boolean isCameraOn = false;
     private float[] accelData;
     private boolean accelEnabled = true;
+    private float light;
 
     private DeviceSensor deviceSensor;
     private Location currentLocation;
@@ -448,6 +452,12 @@ public class IoTStarterApplication extends Application {
     public void setAccelData(float[] accelData) {
         this.accelData = accelData.clone();
     }
+
+    public void setLightData(float light){
+        this.light = light;
+    }
+
+    public float getLightData(){ return light;}
 
     public ArrayList<String> getMessageLog() {
         return messageLog;

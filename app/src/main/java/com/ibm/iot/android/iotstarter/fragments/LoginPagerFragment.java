@@ -27,6 +27,7 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
+
 import com.google.android.gms.security.ProviderInstaller;
 import com.ibm.iot.android.iotstarter.IoTStarterApplication;
 import com.ibm.iot.android.iotstarter.R;
@@ -35,15 +36,17 @@ import com.ibm.iot.android.iotstarter.utils.Constants;
 import com.ibm.iot.android.iotstarter.utils.DeviceSensor;
 import com.ibm.iot.android.iotstarter.utils.LocationUtils;
 import com.ibm.iot.android.iotstarter.utils.MyIoTActionListener;
+
 import org.eclipse.paho.client.mqttv3.MqttException;
+
+import java.security.KeyStore;
+import java.sql.Timestamp;
+import java.util.Date;
 
 import javax.net.SocketFactory;
 import javax.net.ssl.SSLContext;
 import javax.net.ssl.TrustManager;
 import javax.net.ssl.TrustManagerFactory;
-import java.security.KeyStore;
-import java.sql.Timestamp;
-import java.util.Date;
 
 /**
  * The login fragment of the IoTStarter application. Provides functionality for

@@ -17,6 +17,7 @@ package com.ibm.iot.android.iotstarter.iot;
 
 import android.content.Context;
 import android.util.Log;
+
 import org.eclipse.paho.android.service.MqttAndroidClient;
 import org.eclipse.paho.client.mqttv3.*;
 

@@ -23,6 +23,7 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.util.Log;
+
 import com.ibm.iot.android.iotstarter.R;
 import com.ibm.iot.android.iotstarter.fragments.TutorialFragmentA;
 import com.ibm.iot.android.iotstarter.fragments.TutorialFragmentB;
