@@ -278,6 +278,6 @@ public class IoTPagerFragment extends IoTStarterPagerFragment {
         ((TextView) getActivity().findViewById(R.id.accelZ)).setText("z: " + accelData[2]);
 
         float lightData = app.getLightData();
-        ((TextView) getActivity().findViewById(R.id.light)).setText("light: " + lightData + " lumen");
+        ((TextView) getActivity().findViewById(R.id.light)).setText("light: " + lightData + " lx");
     }
 }

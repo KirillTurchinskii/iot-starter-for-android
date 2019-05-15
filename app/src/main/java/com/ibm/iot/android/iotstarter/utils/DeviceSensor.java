@@ -127,7 +127,7 @@ public class DeviceSensor implements SensorEventListener {
                     + sensorEvent.values[1] + " z: " + sensorEvent.values[2]);
             M = sensorEvent.values;
         }else if(sensorEvent.sensor.getType() == Sensor.TYPE_LIGHT){
-            Log.v(TAG, "Light is " + sensorEvent.values[0] + " lumen");
+            Log.v(TAG, "Light is " + sensorEvent.values[0] + " lx");
             L = sensorEvent.values[0];
         }
         if (G != null && M != null) {
