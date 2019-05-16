@@ -17,6 +17,7 @@ Events and commands are user defined values used to differentiate the data that 
 
 The application can publish data to the following event topics:
 - Accelerometer (accel event)
+- Light (light event)
 - Touchmove (touchmove event)
 - Text (text event)
 

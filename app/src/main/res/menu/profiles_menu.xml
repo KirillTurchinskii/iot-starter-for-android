@@ -24,7 +24,7 @@
           android:title="@string/web_label"
           android:orderInCategory="2"
           android:showAsAction="never"/>
-    <item android:id="@+id/action_accel"
+    <item android:id="@+id/action_sensors"
           android:title="@string/accel_label"
           android:orderInCategory="3"
           android:showAsAction="never"/>

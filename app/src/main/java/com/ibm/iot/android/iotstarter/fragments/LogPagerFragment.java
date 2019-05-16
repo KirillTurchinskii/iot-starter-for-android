@@ -199,8 +199,8 @@ public class LogPagerFragment extends ListFragment {
             case R.id.action_web:
                 openWeb();
                 return true;
-            case R.id.action_accel:
-                app.toggleAccel();
+            case R.id.action_sensors:
+                app.toggleSensors();
                 return true;
             case R.id.clear:
                 app.setUnreadCount(0);

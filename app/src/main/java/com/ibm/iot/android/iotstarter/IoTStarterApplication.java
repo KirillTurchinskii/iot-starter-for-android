@@ -215,7 +215,7 @@ public class IoTStarterApplication extends Application {
     /**
      * Enables or disables the publishing of accelerometer data
      */
-    public void toggleAccel() {
+    public void toggleSensors() {
         this.setAccelEnabled(!this.isAccelEnabled());
         if (connected && accelEnabled) {
             // Enable location updates when device is already connected

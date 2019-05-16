@@ -255,8 +255,8 @@ public class ProfilesActivity extends Activity {
 
         // Handle presses on the action bar items
         switch (item.getItemId()) {
-            case R.id.action_accel:
-                app.toggleAccel();
+            case R.id.action_sensors:
+                app.toggleSensors();
                 return true;
             case R.id.action_clear_profiles:
                 app.clearProfiles();
